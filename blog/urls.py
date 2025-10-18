@@ -1,14 +1,13 @@
 from django.urls import path
-from .views import About_view, Contact_view, Index_view
+from .views import blog_home_view, blog_single_view
 from django.conf import settings
 from django.conf.urls.static import static
 
-app_name = 'website'
+app_name = 'blog'
 
 urlpatterns = [
-    path('', Index_view, name='index'),
-    path('about', About_view, name='about'),
-    path('contact', Contact_view, name='contact')
+    path('', blog_home_view, name='home'),
+    path('single', blog_single_view, name='single'),
 ]
 
 # add static and media to url patterns
